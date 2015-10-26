@@ -1,8 +1,12 @@
+<% content_for(:title, "Home | Which would you rather?") %>
+
 <h1>Questions</h1>
 
 <ul>
   <h3>Would you rather: </h3>
     <% @questions.each do |question| %>
-      <li><%= question.option1 %><br><%= question.option2 %></li>
+      <li><%= link_to question.option1, question_path(question) %> <br> <%= link_to question.option2, question_path(question) %> <br> </li>
     <% end %>
 </ul>
+
+<%= link_to "Add Question", new_question_path, :class=> "btn btn-default" %>

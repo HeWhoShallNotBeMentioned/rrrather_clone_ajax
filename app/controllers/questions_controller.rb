@@ -7,6 +7,7 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
+    render :show
   end
 
 
@@ -16,16 +17,18 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    @question.new(question_params)
+    @question = Question.new(question_params)
     if @question.save
       flash[:notice] = "Question successfully added!"
       redirect_to questions_path
     else
-      render: new
+      render :new
+    end
   end
 
   def edit
     @question = Question.find(params[:id])
+    render :edit
   end
 
   def update
@@ -48,6 +51,6 @@ class QuestionsController < ApplicationController
 
   private
   def question_params
-    params.require(:question).permit(:option1, :option3, :vote1, :vote2)
+    params.require(:question).permit(:option1, :option2, :vote1, :vote2)
   end
 end
