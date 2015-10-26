@@ -3,6 +3,6 @@
 <ul>
   <h3>Would you rather: </h3>
     <% @questions.each do |question| %>
-      <h4><li><%= question.option1 %><br><%= question.option2 %></li></h4>
+      <li><%= question.option1 %><br><%= question.option2 %></li>
     <% end %>
 </ul>
