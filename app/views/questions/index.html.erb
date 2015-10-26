@@ -2,7 +2,7 @@
 
 <ul>
   <h4>Would you rather: </h4>
-  <% @questions.each do |question|
-    <li><%= question.option1 %></li>
-    <li><%= question.option2</li>
+    <% @questions.each do |question| %>
+      <li><%= question.option1 %><br><%= question.option2 %></li>
+    <% end %>
 </ul>
