@@ -19,7 +19,7 @@ class CommentsController < ApplicationController
   end
 
   def edit
-    @question = Question.find(params[:Question_id])
+    @question = Question.find(params[:question_id])
     @comment = Comment.find(params[:id])
   end
 

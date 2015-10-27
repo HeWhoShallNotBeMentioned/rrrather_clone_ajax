@@ -8,24 +8,17 @@
 
 <h4>Here are the comments for this question:</h4>
 
-<ul id='question_comments'>
-  <% if @question.comments.any? %>
+
+<% if @question.comments.any? %>
+  <ul id='question_comments'>
     <% @question.comments.each do |comment| %>
-      <li>
-        <%= comment.title %> |
-        <br>
-        <%= comment.text %> |
-        <%= link_to "Edit", edit_question_comment_path(@question, comment), id: "edit_comment_button",:class => "btn btn-default", remote: true %> |
-        <%= link_to "Delete", question_comment_path(@question, comment),
-                                 :data => {:confirm => "Are you sure?",
-                                 :method => "delete"},
-                                 :class => "btn btn-danger" %>
-      </li>
+      <%= render "comments/comment", comment: comment %>
     <% end %>
+  </ul>
 <% else %>
   <p>None yet!</p>
 <% end %>
-</ul>
+
 
 <p><%= link_to "Add a comment", new_question_comment_path(@question), id: "new_comment_button", class: "btn btn-default", remote: true %></p>
 <p><%= link_to "Delete Question", question_path(@question),
