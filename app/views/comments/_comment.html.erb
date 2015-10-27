@@ -1,8 +1,8 @@
-<li>
+<li id="comment_<%= comment.id %>">
   <%= comment.title %> |
   <br>
   <%= comment.text %> |
-  <%= link_to "Edit", edit_question_comment_path(@question, comment), id: "edit_comment_button",:class => "btn btn-default", remote: true %> |
+  <%= link_to "Edit", edit_question_comment_path(@question, comment), id: "edit_comment_button", :class => "btn btn-default", remote: true %> |
   <%= link_to "Delete", question_comment_path(@question, comment),
                            :data => {:confirm => "Are you sure?",
                            :method => "delete"},
