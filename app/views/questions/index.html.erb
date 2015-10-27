@@ -2,11 +2,12 @@
 
 <h1>Questions</h1>
 
-<ul>
-  <h3>Would you rather: </h3>
-    <% @questions.each do |question| %>
-      <li><%= link_to question.option1, question_path(question) %> <br> <%= link_to question.option2, question_path(question) %> <br> </li>
-    <% end %>
-</ul>
+  <ul id="question_index_list">
+    <h3>Would you rather: </h3>
+      <% @questions.each do |question| %>
+        <li><%= link_to question.option1, question_path(question) %> <br> <%= link_to question.option2, question_path(question) %> <br> </li>
+      <% end %>
+  </ul>
 
-<%= link_to "Add Question", new_question_path, :class=> "btn btn-default" %>
+
+<%= link_to "Add Question", new_question_path,  id: "new_question_link", :class=> "btn btn-default", remote: true  %>

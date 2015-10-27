@@ -1,0 +1,3 @@
+$('#new_question').remove();
+$('#new_question_link').show();
+$('#question_index_list').append('<li><%= link_to @question.option1, questions_path %> <br> <%= link_to @question.option2, questions_path %> <br></li>');
