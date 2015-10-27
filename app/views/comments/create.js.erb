@@ -1,0 +1,7 @@
+$('form').remove();
+$('#new_comment_button').show();
+$('ul p').remove();
+$('#list_comments').append('<li><%= @comment.title %> | <%= @comment.text %><%= link_to "Edit", edit_question_comment_path(@question, @comment), :class => "btn btn-default" %> | <%= link_to "Delete", question_comment_path(@question, @comment),
+                         :data => {:confirm => "Are you sure?",
+                         :method => "delete"},
+                         :class => "btn btn-danger" %></li>')
